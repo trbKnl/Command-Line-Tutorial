@@ -16,6 +16,7 @@ The best way to use the included `tutorial.md` is to try out the various command
 
 A computer running any linux distribution or Mac OSX 
 
+
 ### Further reading
 
 * [Linux journey](https://linuxjourney.com/) A website with an excellent free introduction to linux and the command line. And a list of further reading.
