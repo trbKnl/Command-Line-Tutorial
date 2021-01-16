@@ -100,9 +100,9 @@ Extremely useful and often used. Can be used to chain programs together that are
 | Command      | Description | 
 | :---        |    :----   |
 |`ls -la \| less` |  View the output of the ls command in the less pager                  |
-|`history | grep ssh | wc -l ` | Count how many times the ssh program has been execute       |
+|`history \| grep ssh \| wc -l ` | Count how many times the ssh program has been execute       |
 |`ls -R ~/ > bigFile.txt `| Stream the output of the less command to bigFile.txt                   |
-|`cat bigFile.txt | wc -l` | Count the lines of bigFile        |
+|`cat bigFile.txt \| wc -l` | Count the lines of bigFile        |
 
 use `|` to stream the output of a program to the input of a program \
 use `>>` for appending to a file \
