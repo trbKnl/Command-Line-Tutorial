@@ -108,7 +108,7 @@ The Kernel manages:
 
 ### File permission system
 
-![Overview of the `ls -lah` output](./ls.png)
+ <img src="./ls.png" width="500"> 
 
 | Command      | Description | 
 | :---        |    :----   |
