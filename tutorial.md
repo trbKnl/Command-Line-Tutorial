@@ -2,7 +2,7 @@
 
 ## Table of contents
 
-<!-- vim-markdown-toc GFM -->
+<!-- Used the following plugin to generate the ToC: https://github.com/mzlogin/vim-markdown-toc  -->
 
 * [Introduction to Linux](#introduction-to-linux)
     * [Introduction](#introduction)
@@ -14,14 +14,12 @@
     * [Moving on the command line](#moving-on-the-command-line)
     * [List files and directories](#list-files-and-directories)
     * [File permission system](#file-permission-system)
-    * [Pipes](#pipes)
     * [Useful commands](#useful-commands)
+    * [Pipes](#pipes)
     * [Remote access](#remote-access)
 * [Bash and shell scripting with bash](#bash-and-shell-scripting-with-bash)
     * [Introduction](#introduction-1)
     * [Example of shell script](#example-of-shell-script)
-
-<!-- vim-markdown-toc -->
 
 
 ## Introduction to Linux
@@ -54,9 +52,9 @@ The Kernel manages:
 ### Key features of Linux
 
 - Comes with a package manager which installs and updates software from trusted sources. Updating the system is very easy.
-- Very flexible: you can install desktops, GUI's, window managers etc on top of linux 
-- Lightweight and very fast
-- Free
+- Very flexible: You can install desktops, GUI's, window managers etc on top of linux 
+- Lightweight: You can make it as lightweight or bloated as you want
+- [Free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software)
 
 ### The terminal and the shell
 
@@ -116,22 +114,6 @@ The Kernel manages:
 |` sudo         `| Execute a command as root user for full rights  |
 |` sudo vim /etc/hosts  ` | Execute a command as root user for full rights, useful for installing programs, editing files that are not yours etc.  |
 
-### Pipes
-
-Extremely useful and often used. Can be used to chain programs together that are on PATH variable (see `echo $PATH`, run `env` to see all variables) 
-
-| Command      | Description | 
-| :---        |    :----   |
-|`ls -la \| less` |  View the output of the ls command in the less pager                  |
-|`history \| grep ssh \| wc -l ` | Count how many times the ssh program has been execute       |
-|`ls -R ~/ > bigFile.txt `| Stream the output of the less command to bigFile.txt                   |
-|`cat bigFile.txt \| wc -l` | Count the lines of bigFile        |
-
-use `|` to stream the output of a program to the input of a program \
-use `>>` for appending to a file \
-use `>` for overwriting the file, it gives no warnings \
-use `<` for reading from a file (example `less < bigFile.txt`)
-
 ### Useful commands
 
 | Command      | Description | 
@@ -145,12 +127,12 @@ use `<` for reading from a file (example `less < bigFile.txt`)
 |` pkill firefox`| kill all processes matching the name firefox |
 |` echo "hi" `| outputs the string "hi" to standard out (Can be redirected using pipes) |
 |` yes `| output a string repeatedly until killed |
-|` Control + C `| Keycombination to press in order to kill a running program |
+|` Control + C `| Key combination to press in order to kill a running program |
 |` nano `| A "userfriendly" text editor  |
 |` ps -aux`| Outputs processes of all users |
 |` grep` | Print lines that match patterns |
 |` history`| Outputs a history of all run commands |
-|` history | grep command` | Find the specifics of a command that matches the string "command" |
+|` history \| grep command` | Find the specifics of a command that matches the string "command" |
 |` cat file1 file2` | Concatenates the output of 2 files, is often used to output a file to standard out |
 |` head`| Shows the first 10 lines of a file |
 |` tail`| Shows the last 10 lines of a file |
@@ -161,6 +143,22 @@ use `<` for reading from a file (example `less < bigFile.txt`)
 |` find . -name '*.pdf' -type f`| Find all pdf files in the current folder recusively |
 |` file`| Determines the file type |
  
+### Pipes
+
+Extremely useful and often used. Can be used to chain programs together that are on PATH variable (see `echo $PATH`, run `env` to see all variables) 
+
+| Command      | Description | 
+| :---        |    :----   |
+|`ls -la \| less` |  View the output of the ls command in the less pager                  |
+|`history \| grep ssh \| wc -l ` | Count how many times the ssh program has been execute       |
+|`ls -R ~/ > bigFile.txt `| Stream the output of the ls command the file bigFile.txt         |
+|`cat bigFile.txt \| wc -l` | Count the lines of bigFile        |
+
+use `|` to stream the output of a program to the input of a program \
+use `>>` for appending to a file \
+use `>` for overwriting the file, it gives no warnings \
+use `<` for reading from a file (example `less < bigFile.txt`)
+
 
 ### Remote access
 
@@ -221,5 +219,7 @@ To run this script, make it executable: `chmod +x ./myscript.sh`. Then you can r
 See [this overview](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html) for more an extensive overview of bash.
 
 *Tip*: You can run shell commands from with `python` and `R` (In `R` this can be done with the `system()` function)
+
+
 
 
