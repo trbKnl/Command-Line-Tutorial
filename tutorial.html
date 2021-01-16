@@ -1,4 +1,31 @@
 <h1 id="command-line-tutorial">Command line tutorial</h1>
+<h2 id="table-of-contents">Table of contents</h2>
+<!-- vim-markdown-toc GFM -->
+<ul>
+<li><a href="#introduction-to-linux">Introduction to Linux</a>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#file-system-overview">File system overview</a></li>
+<li><a href="#key-features-of-linux">Key features of Linux</a></li>
+<li><a href="#the-terminal-and-the-shell">The terminal and the shell</a></li>
+</ul></li>
+<li><a href="#command-line-overview-the-essentials">Command line overview: the essentials</a>
+<ul>
+<li><a href="#some-commands-to-start-with">Some commands to start with</a></li>
+<li><a href="#moving-on-the-command-line">Moving on the command line</a></li>
+<li><a href="#list-files-and-directories">List files and directories</a></li>
+<li><a href="#file-permission-system">File permission system</a></li>
+<li><a href="#pipes">Pipes</a></li>
+<li><a href="#useful-commands">Useful commands</a></li>
+<li><a href="#remote-access">Remote access</a></li>
+</ul></li>
+<li><a href="#bash-and-shell-scripting-with-bash">Bash and shell scripting with bash</a>
+<ul>
+<li><a href="#introduction-1">Introduction</a></li>
+<li><a href="#example-of-shell-script">Example of shell script</a></li>
+</ul></li>
+</ul>
+<!-- vim-markdown-toc -->
 <h2 id="introduction-to-linux">Introduction to Linux</h2>
 <h3 id="introduction">Introduction</h3>
 <p><em>Philosophy</em>: Many small programs that work together efficiently, with as goal usability and maintainability</p>
@@ -51,7 +78,7 @@
 <h3 id="key-features-of-linux">Key features of Linux</h3>
 <ul>
 <li>Comes with a package manager which installs and updates software from trusted sources. Updating the system is very easy.</li>
-<li>Very flexible: you can install desktops, GUI's, window managers etc on top of linux</li>
+<li>Very flexible: you can install desktops, GUI’s, window managers etc on top of linux</li>
 <li>Lightweight and very fast</li>
 <li>Free</li>
 </ul>
@@ -149,7 +176,7 @@
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>rm ./file*</code></td>
-<td style="text-align: left;">Removes every file that starts with 'file'</td>
+<td style="text-align: left;">Removes every file that starts with “file”</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>rm -R ./folder</code></td>
@@ -157,7 +184,7 @@
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>rm -Rf</code></td>
-<td style="text-align: left;">Removes a folder recursively with FORCE (useful for folders with git repo's)</td>
+<td style="text-align: left;">Removes a folder recursively with FORCE (useful for folders with git repo’s)</td>
 </tr>
 </tbody>
 </table>
@@ -194,7 +221,7 @@
 </table>
 <h3 id="file-permission-system">File permission system</h3>
 <figure>
-<img width=500 src="./ls.png" alt="Overview of the ls -lah output" /><figcaption aria-hidden="true">Overview of the <code>ls -lah</code> output</figcaption>
+<img src="./ls.png" alt="Overview of the ls -lah output" /><figcaption aria-hidden="true">Overview of the <code>ls -lah</code> output</figcaption>
 </figure>
 <table>
 <colgroup>
@@ -237,11 +264,11 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>ls -la | less</code></td>
+<td style="text-align: left;"><code>ls -la \| less</code></td>
 <td style="text-align: left;">View the output of the ls command in the less pager</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>history | grep ssh | wc -l</code></td>
+<td style="text-align: left;"><code>history \| grep ssh \| wc -l</code></td>
 <td style="text-align: left;">Count how many times the ssh program has been execute</td>
 </tr>
 <tr class="odd">
@@ -249,7 +276,7 @@
 <td style="text-align: left;">Stream the output of the less command to bigFile.txt</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>cat bigFile.txt | wc -l</code></td>
+<td style="text-align: left;"><code>cat bigFile.txt \| wc -l</code></td>
 <td style="text-align: left;">Count the lines of bigFile</td>
 </tr>
 </tbody>
@@ -277,7 +304,7 @@ use <code>&lt;</code> for reading from a file (example <code>less &lt; bigFile.t
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>less</code></td>
-<td style="text-align: left;">Pager, up/down j/k, seach with '/', quit with q</td>
+<td style="text-align: left;">Pager, up/down j/k, seach with “/”, quit with q</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>top</code></td>
@@ -301,7 +328,7 @@ use <code>&lt;</code> for reading from a file (example <code>less &lt; bigFile.t
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>echo "hi"</code></td>
-<td style="text-align: left;">outputs the string 'hi' to standard out (Can be redirected using pipes)</td>
+<td style="text-align: left;">outputs the string “hi” to standard out (Can be redirected using pipes)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>yes</code></td>
@@ -313,7 +340,7 @@ use <code>&lt;</code> for reading from a file (example <code>less &lt; bigFile.t
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>nano</code></td>
-<td style="text-align: left;">A 'userfriendly' text editor</td>
+<td style="text-align: left;">A “userfriendly” text editor</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>ps -aux</code></td>
@@ -329,7 +356,7 @@ use <code>&lt;</code> for reading from a file (example <code>less &lt; bigFile.t
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>history | grep command</code></td>
-<td style="text-align: left;">Find the specifics of a command that matches the string 'command'</td>
+<td style="text-align: left;">Find the specifics of a command that matches the string “command”</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>cat file1 file2</code></td>
@@ -406,7 +433,7 @@ use <code>&lt;</code> for reading from a file (example <code>less &lt; bigFile.t
 </table>
 <h2 id="bash-and-shell-scripting-with-bash">Bash and shell scripting with bash</h2>
 <h3 id="introduction-1">Introduction</h3>
-<p>Bash is often the default shell, when you log onto a system. The config of bash is stored in ~/.bashrc, when starting up a terminal with bash as a shell, the contents in .bashrc are sourced. Most programs have similar config files.</p>
+<p>Bash is often the default shell when you log onto a system. The config of bash is stored in ~/.bashrc, when starting up a terminal with bash as a shell, the contents in .bashrc are sourced. Most programs have similar config files.</p>
 <p>Bash has its own programming language, which is similar to but not the same as the programming languages of other shells. When writing scripts comply to the POSIX standard whenever possible.</p>
 <p>The combination of shell scripting and pipes is very powerful, you can write short and powerful programs with it. The power lies in the fact that you can create an new programs by combining other programs that are in the /bin directory (or one of the other directories on the PATH variable)</p>
 <p>Use aliases to create your own shortcuts (run your shorcuts as if they are programs in the /bin folder). Aliases are very powerful, they can refer to scripts that do non-trivial things. Example: <code>alias tu='top -o %CPU'</code></p>
@@ -421,18 +448,18 @@ use <code>&lt;</code> for reading from a file (example <code>less &lt; bigFile.t
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the variable COUNTER and set to 1</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="va">COUNTER=</span>1</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="fu">true</span><span class="kw">;</span> <span class="kw">do</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="fu">true</span><span class="kw">;</span> <span class="cf">do</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Append a string to the file called counter.log</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;Dit is mijn counter: &quot;&quot;</span><span class="va">$COUNTER</span><span class="st">&quot;</span> <span class="op">&gt;&gt;</span> counter.log</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add one to counter</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="va">COUNTER=$((</span>COUNTER+1<span class="va">))</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="va">COUNTER=$((COUNTER</span><span class="op">+</span><span class="dv">1</span><span class="va">))</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Let the CPU sleep for half a second</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sleep</span> 0.5<span class="kw">;</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="kw">done</span> <span class="kw">&amp;</span> <span class="bu">echo</span> <span class="st">&quot;Process has been send to the background, please kill me! run: kill &quot;&quot;</span><span class="va">$!</span><span class="st">&quot;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="kw">&amp;</span> <span class="bu">echo</span> <span class="st">&quot;Process has been send to the background, please kill me! run: kill &quot;&quot;</span><span class="va">$!</span><span class="st">&quot;</span></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: the ampersand sends a program to the background and frees up the terminal. </span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Do not forget to kill it</span></span></code></pre></div>

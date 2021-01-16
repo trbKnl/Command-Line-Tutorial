@@ -1,5 +1,28 @@
-
 # Command line tutorial
+
+## Table of contents
+
+<!-- vim-markdown-toc GFM -->
+
+* [Introduction to Linux](#introduction-to-linux)
+    * [Introduction](#introduction)
+    * [File system overview](#file-system-overview)
+    * [Key features of Linux](#key-features-of-linux)
+    * [The terminal and the shell](#the-terminal-and-the-shell)
+* [Command line overview: the essentials](#command-line-overview-the-essentials)
+    * [Some commands to start with](#some-commands-to-start-with)
+    * [Moving on the command line](#moving-on-the-command-line)
+    * [List files and directories](#list-files-and-directories)
+    * [File permission system](#file-permission-system)
+    * [Pipes](#pipes)
+    * [Useful commands](#useful-commands)
+    * [Remote access](#remote-access)
+* [Bash and shell scripting with bash](#bash-and-shell-scripting-with-bash)
+    * [Introduction](#introduction-1)
+    * [Example of shell script](#example-of-shell-script)
+
+<!-- vim-markdown-toc -->
+
 
 ## Introduction to Linux
 
