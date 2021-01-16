@@ -5,12 +5,12 @@ The best way to use the included `tutorial.md` is to try out the various command
 
 #### What you'll learn
 
-    * The difference between: the Linux kernel the terminal and the shell. 
-    * How to move on the command line 
-    * Do basic file manipulations 
-    * A few other useful commands
-    * Chaining commands together using pipes
-    * A very brief introduction on how to start with shell scripting
+* The difference between: the Linux kernel the terminal and the shell. 
+* How to move on the command line 
+* Do basic file manipulations 
+* A few other useful commands
+* Chaining commands together using pipes
+* A very brief introduction on how to start with shell scripting
 
 #### What you'll need
 
