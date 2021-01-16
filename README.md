@@ -26,6 +26,6 @@ The following topics are briefly touched upon:
 
 ### Further reading
 
-* [linux journey](https://linuxjourney.com/) A website with free tutorial 
+* [linux journey](https://linuxjourney.com/) A website with an excellent free introduction to linux and the command line. And a list of further reading.
 
 

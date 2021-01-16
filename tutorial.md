@@ -21,7 +21,6 @@
     * [Introduction](#introduction-1)
     * [Example of shell script](#example-of-shell-script)
 
-
 ## Introduction to Linux
 
 ### Introduction
@@ -39,7 +38,7 @@ The Kernel manages:
 ### File system overview
 
 | Folder      | Description | 
-| :---       |    :-------------------------------------   |
+| :---       |    :----------------------   |
 | `/ `| Root of the file system                      |
 | `/bin `| Contains programs (binaries) |
 | `/usr/bin `| Non essential programs |
@@ -86,12 +85,14 @@ The Kernel manages:
 |` mv  ./file1 ./file2   `| Move files from A to B, also to rename files  |
 |` mkdir        `| Create a directory         |
 |` rmdir        `| Removes an empty directory         |
-|` cp  ./original ./copy   `| copies a file       |
+|` cp  ./original ./copy   `| copies a file     |
 |` cp -R ./folder ./copyOffolder   `| copies a folder recursively  |
 |` rm ./file `| Removes a file |
 |` rm ./file* `| Removes every file that starts with "file" |
 |` rm -R ./folder   `| Removes a folder recursively         |
 |` rm -Rf       `| Removes a folder recursively with FORCE (useful for folders with git repo's)  |
+
+*Tip*: Press tab to auto-complete commands or paths when typing out paths. 
 
 
 ### List files and directories
@@ -106,7 +107,7 @@ The Kernel manages:
 
 ### File permission system
 
- <img src="./ls.png" width="500"> 
+ <img src="./resources/ls.png" width="500"> 
 
 | Command      | Description | 
 | :---        |    :----   |
