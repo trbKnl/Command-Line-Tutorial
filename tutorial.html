@@ -1,0 +1,441 @@
+<h1 id="command-line-tutorial">Command line tutorial</h1>
+<h2 id="introduction-to-linux">Introduction to Linux</h2>
+<h3 id="introduction">Introduction</h3>
+<p><em>Philosophy</em>: Many small programs that work together efficiently, with as goal usability and maintainability</p>
+<p>Linux is a kernel, the operating system is <a href="https://www.gnu.org/home.en.html">GNU</a>. But when people say Linux, they mean <a href="https://en.wikipedia.org/wiki/Linux_kernel">Linux Kernel</a> + <a href="https://www.gnu.org/software/coreutils/">GNU-utils</a>, which are a set of programs that are very well known and widely used, such as <code>ls</code>. There are also other kernels such as the BSD kernel, with a similar set of tools comparable to the GNU-utils.</p>
+<p>The Kernel manages:</p>
+<ul>
+<li>System hardware such as the CPU and other input/output (IO)</li>
+<li>File system</li>
+<li>Processes scheduling</li>
+</ul>
+<h3 id="file-system-overview">File system overview</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Folder</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>/</code></td>
+<td style="text-align: left;">Root of the file system</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>/bin</code></td>
+<td style="text-align: left;">Contains programs (binaries)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>/usr/bin</code></td>
+<td style="text-align: left;">Non essential programs</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>/etc</code></td>
+<td style="text-align: left;">Contains system config files</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>/tmp</code></td>
+<td style="text-align: left;">Stores temporary files</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>/home</code></td>
+<td style="text-align: left;">Contains personal data of users</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>/home/patrick</code></td>
+<td style="text-align: left;">Patricks home folder</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-features-of-linux">Key features of Linux</h3>
+<ul>
+<li>Comes with a package manager which installs and updates software from trusted sources. Updating the system is very easy.</li>
+<li>Very flexible: you can install desktops, GUI's, window managers etc on top of linux</li>
+<li>Lightweight and very fast</li>
+<li>Free</li>
+</ul>
+<h3 id="the-terminal-and-the-shell">The terminal and the shell</h3>
+<ul>
+<li>The terminal is program that outputs text to user</li>
+<li>Inside the terminal runs a shell, which is its own program which has certain functionalities such as: variables, functions, auto-completion</li>
+<li>The shell is a program that runs as a REPL (Read Evaluate Print Loop, same as a console in R). It reads your input and evaluates it.</li>
+<li>Examples of shells are: csh, zsh, bash, fish, bash is the most common</li>
+</ul>
+<h2 id="command-line-overview-the-essentials">Command line overview: the essentials</h2>
+<h3 id="some-commands-to-start-with">Some commands to start with</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>whoami</code></td>
+<td style="text-align: left;">who am I</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>w</code></td>
+<td style="text-align: left;">Who is doing what</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>uname -a</code></td>
+<td style="text-align: left;">Shows OS info</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pwd</code></td>
+<td style="text-align: left;">Shows primary working directory</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moving-on-the-command-line">Moving on the command line</h3>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>cd</code></td>
+<td style="text-align: left;">Change directory to home folder</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cd ./somefolder</code></td>
+<td style="text-align: left;">Change directory to somefolder</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cd ~/somefolder</code></td>
+<td style="text-align: left;">Change directory to some folder from homefolder</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cd ../</code></td>
+<td style="text-align: left;">Change to the directory above the current directory</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cd ../../</code></td>
+<td style="text-align: left;">Change to 2 directories above the current directory</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>mv  ./file1 ./file2</code></td>
+<td style="text-align: left;">Move files from A to B, also to rename files</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>mkdir</code></td>
+<td style="text-align: left;">Create a directory</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>rmdir</code></td>
+<td style="text-align: left;">Removes an empty directory</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cp  ./original ./copy</code></td>
+<td style="text-align: left;">copies a file</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cp -R ./folder ./copyOffolder</code></td>
+<td style="text-align: left;">copies a folder recursively</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>rm ./file</code></td>
+<td style="text-align: left;">Removes a file</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>rm ./file*</code></td>
+<td style="text-align: left;">Removes every file that starts with 'file'</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>rm -R ./folder</code></td>
+<td style="text-align: left;">Removes a folder recursively</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>rm -Rf</code></td>
+<td style="text-align: left;">Removes a folder recursively with FORCE (useful for folders with git repo's)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="list-files-and-directories">List files and directories</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>ls</code></td>
+<td style="text-align: left;">List files in the current folder</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ls -l</code></td>
+<td style="text-align: left;">Show a longer list</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ls -a</code></td>
+<td style="text-align: left;">Show hidden files and folders</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ls -lah</code></td>
+<td style="text-align: left;">Add human readability</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ls -R</code></td>
+<td style="text-align: left;">list files Recusively recursively</td>
+</tr>
+</tbody>
+</table>
+<h3 id="file-permission-system">File permission system</h3>
+<figure>
+<img width=500 src="./ls.png" alt="Overview of the ls -lah output" /><figcaption aria-hidden="true">Overview of the <code>ls -lah</code> output</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>chmod +x</code></td>
+<td style="text-align: left;">Makes a file executable</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>sudo</code></td>
+<td style="text-align: left;">Execute a command as root user for full rights</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>sudo vim /etc/hosts</code></td>
+<td style="text-align: left;">Execute a command as root user for full rights, useful for installing programs, editing files that are not yours etc.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pipes">Pipes</h3>
+<p>Extremely useful and often used. Can be used to chain programs together that are on PATH variable (see <code>echo $PATH</code>, run <code>env</code> to see all variables)</p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>ls -la | less</code></td>
+<td style="text-align: left;">View the output of the ls command in the less pager</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>history | grep ssh | wc -l</code></td>
+<td style="text-align: left;">Count how many times the ssh program has been execute</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ls -R ~/ &gt; bigFile.txt</code></td>
+<td style="text-align: left;">Stream the output of the less command to bigFile.txt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cat bigFile.txt | wc -l</code></td>
+<td style="text-align: left;">Count the lines of bigFile</td>
+</tr>
+</tbody>
+</table>
+<p>use <code>|</code> to stream the output of a program to the input of a program<br />
+use <code>&gt;&gt;</code> for appending to a file<br />
+use <code>&gt;</code> for overwriting the file, it gives no warnings<br />
+use <code>&lt;</code> for reading from a file (example <code>less &lt; bigFile.txt</code>)</p>
+<h3 id="useful-commands">Useful commands</h3>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>man man</code></td>
+<td style="text-align: left;">Opens the manual of the man command</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>less</code></td>
+<td style="text-align: left;">Pager, up/down j/k, seach with '/', quit with q</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>top</code></td>
+<td style="text-align: left;">View all running processes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>top -o %CPU</code></td>
+<td style="text-align: left;">Sort by CPU usage</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>top -o %MEM</code></td>
+<td style="text-align: left;">Sort by memory usage</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>kill PID</code></td>
+<td style="text-align: left;">kill a process with PID (process ID) number</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>pkill firefox</code></td>
+<td style="text-align: left;">kill all processes matching the name firefox</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>echo "hi"</code></td>
+<td style="text-align: left;">outputs the string 'hi' to standard out (Can be redirected using pipes)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>yes</code></td>
+<td style="text-align: left;">output a string repeatedly until killed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Control + C</code></td>
+<td style="text-align: left;">Keycombination to press in order to kill a running program</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>nano</code></td>
+<td style="text-align: left;">A 'userfriendly' text editor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ps -aux</code></td>
+<td style="text-align: left;">Outputs processes of all users</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>grep</code></td>
+<td style="text-align: left;">Print lines that match patterns</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>history</code></td>
+<td style="text-align: left;">Outputs a history of all run commands</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>history | grep command</code></td>
+<td style="text-align: left;">Find the specifics of a command that matches the string 'command'</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cat file1 file2</code></td>
+<td style="text-align: left;">Concatenates the output of 2 files, is often used to output a file to standard out</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>head</code></td>
+<td style="text-align: left;">Shows the first 10 lines of a file</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>tail</code></td>
+<td style="text-align: left;">Shows the last 10 lines of a file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>exit</code></td>
+<td style="text-align: left;">exit the current terminal, useful if you are going from one shell to the other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>clear</code></td>
+<td style="text-align: left;">clear the screen (Control + L)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>touch</code></td>
+<td style="text-align: left;">Change the modification date of a file, if file does not exist, create it</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>touch file{1..10}</code></td>
+<td style="text-align: left;">Creates 10 files: file1 … file10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>find . -name '*.pdf' -type f</code></td>
+<td style="text-align: left;">Find all pdf files in the current folder recusively</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>file</code></td>
+<td style="text-align: left;">Determines the file type</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remote-access">Remote access</h3>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>ping www.google.nl</code></td>
+<td style="text-align: left;">See if you can reach a host (www.google.nl is translated to an ipaddr) from current shell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ping ipaddr</code></td>
+<td style="text-align: left;">See if you can reach a host matching: ipaddr</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ping hostname</code></td>
+<td style="text-align: left;">See if you can reach a host matching: hostname, the hostname is linked to an ipaddr</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ssh 192.168.0.1</code></td>
+<td style="text-align: left;">Remote login to a host with ip adress: 192.168.0.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ssh user@192.168.0.1</code></td>
+<td style="text-align: left;">Remote login to a host with ip adress: 192.168.0.1 as the user: user</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bash-and-shell-scripting-with-bash">Bash and shell scripting with bash</h2>
+<h3 id="introduction-1">Introduction</h3>
+<p>Bash is often the default shell, when you log onto a system. The config of bash is stored in ~/.bashrc, when starting up a terminal with bash as a shell, the contents in .bashrc are sourced. Most programs have similar config files.</p>
+<p>Bash has its own programming language, which is similar to but not the same as the programming languages of other shells. When writing scripts comply to the POSIX standard whenever possible.</p>
+<p>The combination of shell scripting and pipes is very powerful, you can write short and powerful programs with it. The power lies in the fact that you can create an new programs by combining other programs that are in the /bin directory (or one of the other directories on the PATH variable)</p>
+<p>Use aliases to create your own shortcuts (run your shorcuts as if they are programs in the /bin folder). Aliases are very powerful, they can refer to scripts that do non-trivial things. Example: <code>alias tu='top -o %CPU'</code></p>
+<h3 id="example-of-shell-script">Example of shell script</h3>
+<p>Bash has its own scripting language, below is an example of a shell script:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The first line of the script tells the OS, </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># that the script has the be execute with bash.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Bash is also a program. Try executing bash inside bash.</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the variable COUNTER and set to 1</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="va">COUNTER=</span>1</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="fu">true</span><span class="kw">;</span> <span class="kw">do</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Append a string to the file called counter.log</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;Dit is mijn counter: &quot;&quot;</span><span class="va">$COUNTER</span><span class="st">&quot;</span> <span class="op">&gt;&gt;</span> counter.log</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add one to counter</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="va">COUNTER=$((</span>COUNTER+1<span class="va">))</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Let the CPU sleep for half a second</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sleep</span> 0.5<span class="kw">;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="kw">done</span> <span class="kw">&amp;</span> <span class="bu">echo</span> <span class="st">&quot;Process has been send to the background, please kill me! run: kill &quot;&quot;</span><span class="va">$!</span><span class="st">&quot;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: the ampersand sends a program to the background and frees up the terminal. </span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Do not forget to kill it</span></span></code></pre></div>
+<p>To run this script, make it executable: <code>chmod +x ./myscript.sh</code>. Then you can run the program as follows: <code>user@host $ /path/to/myscript.sh</code></p>
+<p>See <a href="https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html">this overview</a> for more an extensive overview of bash.</p>
+<p><em>Tip</em>: You can run shell commands from with <code>python</code> and <code>R</code> (In <code>R</code> this can be done with the <code>system()</code> function)</p>
