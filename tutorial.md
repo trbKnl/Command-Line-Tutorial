@@ -25,7 +25,7 @@
 
 ### Introduction
 
-*Philosophy*: Many small programs that work together efficiently, with as goal usability and maintainability 
+*The linux philosophy*: Many small programs that work together efficiently, with as goal usability and maintainability 
 
 Linux is a kernel, the operating system is [GNU](https://www.gnu.org/home.en.html). But when people say Linux, they mean [Linux Kernel](https://en.wikipedia.org/wiki/Linux_kernel) + [GNU-utils](https://www.gnu.org/software/coreutils/), which are a set of programs that are very well known and widely used, such as `ls`. There are also other kernels such as the BSD kernel, with a similar set of tools comparable to the GNU-utils.
 
@@ -38,8 +38,8 @@ The Kernel manages:
 ### File system overview
 
 | Folder      | Description | 
-| :---       |    :----------------------   |
-| `/ `| Root of the file system                      |
+| :---       |    :-------------------  |
+| `/ `| Root of the file system         |
 | `/bin `| Contains programs (binaries) |
 | `/usr/bin `| Non essential programs |
 | `/etc `| Contains system config files |
@@ -59,7 +59,7 @@ The Kernel manages:
 
 - The terminal is program that outputs text to user 
 - Inside the terminal runs a shell, which is its own program which has certain functionalities such as: variables, functions, auto-completion
-- The shell is a program that runs as a REPL (Read Evaluate Print Loop, same as a console in R). It reads your input and evaluates it.
+- The shell is a program that runs as a REPL (Read Evaluate Print Loop, same as a console in R). It reads your input and evaluates it, prints the output, and lets you type in a new command.
 - Examples of shells are: csh, zsh, bash, fish, bash is the most common
 
 ## Command line overview: the essentials
@@ -68,23 +68,24 @@ The Kernel manages:
 
 | Command    | Description | 
 | :---        |    :----   |
-| `whoami  ` | who am I |
+| `whoami  ` | Who are you? |
 | `w       ` | Who is doing what |
 | `uname -a` | Shows OS info | 
 | `pwd     ` | Shows primary working directory | 
+| `whatis nameOfprogram  ` | Shows what a program does | 
 
 ### Moving on the command line
 
 | Command      | Description | 
 | :---        |    :----   |
 |` cd         `| Change directory to home folder       |
-|` cd ./somefolder        `| Change directory to somefolder       |
-|` cd ~/somefolder        `| Change directory to some folder from homefolder         |
+|` cd ./somefolder    `| Change directory to somefolder       |
+|` cd ~/somefolder    `| Change directory to some folder from homefolder (~/ can be used as reference to the home folder of the current user) |
 |` cd ../    `|  Change to the directory above the current directory |
 |` cd ../../    `|  Change to 2 directories above the current directory |
 |` mv  ./file1 ./file2   `| Move files from A to B, also to rename files  |
-|` mkdir        `| Create a directory         |
-|` rmdir        `| Removes an empty directory         |
+|` mkdir newdir       `| Create a directory called newdir        |
+|` rmdir emptydir       `| Removes an empty directory called emptydir    |
 |` cp  ./original ./copy   `| copies a file     |
 |` cp -R ./folder ./copyOffolder   `| copies a folder recursively  |
 |` rm ./file `| Removes a file |
@@ -92,7 +93,7 @@ The Kernel manages:
 |` rm -R ./folder   `| Removes a folder recursively         |
 |` rm -Rf       `| Removes a folder recursively with FORCE (useful for folders with git repo's)  |
 
-*Tip*: Press tab to auto-complete commands or paths when typing out paths. 
+*Tip*: Press tab to auto-complete commands or paths when typing out paths.
 
 
 ### List files and directories
@@ -119,15 +120,15 @@ The Kernel manages:
 
 | Command      | Description | 
 | :---        |    :----   |
-|` man man`| Opens the manual of the man command  |
-|` less `| Pager, up/down j/k, seach with "/", quit with q |
+|` less `| Pager, a useful program to read text files in, up/down j/k, seach with "/", quit with q |
+|` man ls`| This is the most useful command, and is often under utilized. It opens the manual of any program if available in a pager the functions the same as the less program  |
 |` top `| View all running processes |
 |` top -o %CPU `| Sort by CPU usage |
 |` top -o %MEM`| Sort by memory usage |
 |` kill PID`| kill a process with PID (process ID) number |
 |` pkill firefox`| kill all processes matching the name firefox |
 |` echo "hi" `| outputs the string "hi" to standard out (Can be redirected using pipes) |
-|` yes `| output a string repeatedly until killed |
+|` yes `| Output a string repeatedly until killed |
 |` Control + C `| Key combination to press in order to kill a running program |
 |` nano `| A "userfriendly" text editor  |
 |` ps -aux`| Outputs processes of all users |
@@ -137,9 +138,9 @@ The Kernel manages:
 |` cat file1 file2` | Concatenates the output of 2 files, is often used to output a file to standard out |
 |` head`| Shows the first 10 lines of a file |
 |` tail`| Shows the last 10 lines of a file |
-|` exit`| exit the current terminal, useful if you are going from one shell to the other |
+|` exit`| Exit the current terminal, useful if you are going from one shell to the other using ssh |
 |` clear`| clear the screen (Control + L) |
-|` touch`| Change the modification date of a file, if file does not exist, create it |
+|` touch`| Change the modification date of a file, if the file does not exist, create it |
 |` touch file{1..10}`| Creates 10 files: file1 ... file10 |
 |` find . -name '*.pdf' -type f`| Find all pdf files in the current folder recusively |
 |` file`| Determines the file type |
@@ -175,13 +176,11 @@ use `<` for reading from a file (example `less < bigFile.txt`)
 
 ### Introduction
 
-Bash is often the default shell when you log onto a system. The config of bash is stored in ~/.bashrc, when starting up a terminal with bash as a shell, the contents in .bashrc are sourced. Most programs have similar config files.
+Bash is often the default shell when you log onto a system. The config file of bash is stored in a file called ~/.bashrc, when starting up a terminal with bash as the shell, the contents in ~/.bashrc are loaded (sourced), in your ~/.bashrc you can set your own settings. 
 
-Bash has its own programming language, which is similar to but not the same as the programming languages of other shells. When writing scripts comply to the POSIX standard whenever possible.
+Bash has its own programming language, which is very similar to but not the same as the programming languages of other shells. Bash has support for variables, functions and control flow statement. Writing a script using a shell script language, is called shell scripting. The combination of shell scripting and pipes is very powerful and can be used to write short and powerful programs. The power lies in the fact that you can create an new programs by combining other programs that are in the /bin directory (or one of the other directories on the PATH variable)
 
-The combination of shell scripting and pipes is very powerful, you can write short and powerful programs with it. The power lies in the fact that you can create an new programs by combining other programs that are in the /bin directory (or one of the other directories on the PATH variable)
-
-Use aliases to create your own shortcuts (run your shorcuts as if they are programs in the /bin folder). Aliases are very powerful, they can refer to scripts that do non-trivial things. Example: `alias tu='top -o %CPU'`
+Use aliases to create your own shortcuts (run your shortcuts as if they are programs in the /bin folder). Aliases are very powerful, they can refer to scripts that do non-trivial things. Example: `alias tu='top -o %CPU'`. You can put these aliases in your ~/.bashrc so they are sourced when you start your shell session.
 
 ### Example of shell script
 
