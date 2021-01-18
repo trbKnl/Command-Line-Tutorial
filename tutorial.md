@@ -120,8 +120,8 @@ The Kernel manages:
 
 | Command      | Description | 
 | :---        |    :----   |
-|` less `| Pager, a useful program to read text files in, up/down j/k, seach with "/", quit with q |
-|` man ls`| This is the most useful command, and is often under utilized. It opens the manual of any program if available in a pager the functions the same as the less program  |
+|` less `| Less is a pager, which is a useful program to read text files with. scroll text up/down with j/k, seach with "/", quit with q, see `man less` for the full documentation |
+|` man ls`| This is the most useful command, and is often under utilized. It opens the manual of any program, if available, in a pager that functions the same as the less program  |
 |` top `| View all running processes |
 |` top -o %CPU `| Sort by CPU usage |
 |` top -o %MEM`| Sort by memory usage |
