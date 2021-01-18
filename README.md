@@ -19,6 +19,5 @@ A computer running any linux distribution or Mac OSX
 
 ### Further reading
 
-* [Linux journey](https://linuxjourney.com/) A website with an excellent free introduction to linux and the command line. And a list of further reading.
-
-
+* [Linux journey](https://linuxjourney.com/) A website with an excellent free introduction to Linux and the command line. And a list of further reading.
+* [Awesome bash](https://github.com/awesome-lists/awesome-bash) A great curated list of bash resources, if you want to know more are about shell scripting
