@@ -83,6 +83,7 @@ The Kernel manages:
 |` cd ~/somefolder    `| Change directory to some folder from homefolder (~/ can be used as reference to the home folder of the current user) |
 |` cd ../    `|  Change to the directory above the current directory |
 |` cd ../../    `|  Change to 2 directories above the current directory |
+|` cd - `|  Go to the directory you were previously |
 |` mv  ./file1 ./file2   `| Move files from A to B, also to rename files  |
 |` mkdir newdir       `| Create a directory called newdir        |
 |` rmdir emptydir       `| Removes an empty directory called emptydir    |
