@@ -178,7 +178,7 @@ use `<` for reading from a file (example `less < bigFile.txt`)
 
 Bash is often the default shell when you log onto a system. The config file of bash is stored in a file called ~/.bashrc, when starting up a terminal with bash as the shell, the contents in ~/.bashrc are loaded (sourced), in your ~/.bashrc you can set your own settings. 
 
-Bash has its own programming language, which is very similar to but not the same as the programming languages of other shells. Bash has support for variables, functions and control flow statement. Writing a script using a shell script language, is called shell scripting. The combination of shell scripting and pipes is very powerful and can be used to write short and powerful programs. The power lies in the fact that you can create an new programs by combining other programs that are in the /bin directory (or one of the other directories on the PATH variable)
+Bash has its own programming language, which is very similar to but not the same as the programming languages of other shells. Bash has support for variables, functions and control flow statements. Writing a script using a shell script language, is called shell scripting. The combination of shell scripting and pipes is very powerful and can be used to write short and powerful programs. The power lies in the fact that you can create an new programs by combining other programs that are in the /bin directory (or one of the other directories on the PATH variable)
 
 Use aliases to create your own shortcuts (run your shortcuts as if they are programs in the /bin folder). Aliases are very powerful, they can refer to scripts that do non-trivial things. Example: `alias tu='top -o %CPU'`. You can put these aliases in your ~/.bashrc so they are sourced when you start your shell session.
 
@@ -214,7 +214,8 @@ done & echo "Process has been send to the background, please kill me! run: kill 
 
 ```
 
-To run this script, make it executable: `chmod +x ./myscript.sh`. Then you can run the program as follows: `user@host $ /path/to/myscript.sh`
+To run this script, make it executable: `chmod +x ./myscript.sh`. Then you can run the program as follows: `user@host $ /path/to/myscript.sh`. This script is appending a new line to a file called `counter.log`, a file which has been created by the script in the folder from where the script is run from. Try executing `tail -f counter.log` on the file to see what happens. To see what the `-f` flag is doing, run: `man tail`. This is useful when monitoring your own log files.
+
 
 See [this overview](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html) for more an extensive overview of bash.
 
