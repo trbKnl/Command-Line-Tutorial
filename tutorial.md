@@ -87,8 +87,8 @@ The Kernel manages:
 |` mv  ./file1 ./file2   `| Move files from A to B, also to rename files  |
 |` mkdir newdir       `| Create a directory called newdir        |
 |` rmdir emptydir       `| Removes an empty directory called emptydir    |
-|` cp  ./original ./copy   `| copies a file     |
-|` cp -R ./folder ./copyOffolder   `| copies a folder recursively  |
+|` cp  ./original ./copy   `| Copies a file     |
+|` cp -R ./folder ./copyOffolder   `| Copies a folder recursively  |
 |` rm ./file `| Removes a file |
 |` rm ./file* `| Removes every file that starts with "file" |
 |` rm -R ./folder   `| Removes a folder recursively         |
@@ -105,7 +105,7 @@ The Kernel manages:
 |` ls -l` | Show a longer list        |
 |` ls -a` | Show hidden files and folders      |
 |` ls -lah `| Add human readability      |
-|` ls -R` | list files Recusively recursively          |
+|` ls -R` | List files Recusively recursively          |
 
 ### File permission system
 
@@ -126,9 +126,9 @@ The Kernel manages:
 |` top `| View all running processes |
 |` top -o %CPU `| Sort by CPU usage |
 |` top -o %MEM`| Sort by memory usage |
-|` kill PID`| kill a process with PID (process ID) number |
-|` pkill firefox`| kill all processes matching the name firefox |
-|` echo "hi" `| outputs the string "hi" to standard out (Can be redirected using pipes) |
+|` kill PID`| Kill a process with PID (process ID) number |
+|` pkill firefox`| Kill all processes matching the name firefox |
+|` echo "hi" `| Outputs the string "hi" to standard out (Can be redirected using pipes) |
 |` yes `| Output a string repeatedly until killed |
 |` Control + C `| Key combination to press in order to kill a running program |
 |` nano `| A "userfriendly" text editor  |
@@ -140,7 +140,7 @@ The Kernel manages:
 |` head`| Shows the first 10 lines of a file |
 |` tail`| Shows the last 10 lines of a file |
 |` exit`| Exit the current terminal, useful if you are going from one shell to the other using ssh |
-|` clear`| clear the screen (Control + L) |
+|` clear`| Clear the screen (Control + L) |
 |` touch`| Change the modification date of a file, if the file does not exist, create it |
 |` touch file{1..10}`| Creates 10 files: file1 ... file10 |
 |` find . -name '*.pdf' -type f`| Find all pdf files in the current folder recusively |
@@ -148,7 +148,7 @@ The Kernel manages:
  
 ### Pipes
 
-Extremely useful and often used. Can be used to chain programs together that are on PATH variable (see `echo $PATH`, run `env` to see all variables) 
+Extremely useful and often used. Can be used to chain programs together that are on PATH variable (run `echo $PATH` so see all the directories that bash can use programs from, run `env` to see all variables that are currently in the bash environment) 
 
 | Command      | Description | 
 | :---        |    :----   |
@@ -157,9 +157,16 @@ Extremely useful and often used. Can be used to chain programs together that are
 |`ls -R ~/ > bigFile.txt `| Stream the output of the ls command the file bigFile.txt         |
 |`cat bigFile.txt \| wc -l` | Count the lines of bigFile        |
 
-use `|` to stream the output of a program to the input of a program \
-use `>>` for appending to a file \
-use `>` for overwriting the file, it gives no warnings \
+use `|` to stream the output of a program to the input of a program 
+
+use `>>` for appending to a file
+
+`echo "I want to append my file with this string" >> myfile`
+
+use `>` for overwriting the file, it gives no warnings 
+
+`echo "I want to overwrite my file with this string" > myfile`
+
 use `<` for reading from a file (example `less < bigFile.txt`)
 
 
