@@ -57,10 +57,10 @@ The Kernel manages:
 
 ### The terminal and the shell
 
-- The terminal is program that outputs text to user 
-- Inside the terminal runs a shell, which is its own program which has certain functionalities such as: variables, functions, auto-completion
-- The shell is a program that runs as a REPL (Read Evaluate Print Loop, same as a console in R). It reads your input and evaluates it, prints the output, and lets you type in a new command.
-- Examples of shells are: csh, zsh, bash, fish, bash is the most common
+- The terminal is program that outputs text to user. Examples are: allacrity, iterm2, urxvt, st, putty and many more.
+- Inside the terminal runs a shell, which is its own program which has certain functionalities such as: variables, functions, auto-completion.
+- Examples of shells are: csh, zsh, bash, fish, bash is the most common, and often the one you encounter when you log onto a server.
+- The shell runs as a REPL (Read Evaluate Print Loop, same as a console in R). It reads your input and evaluates it, prints the output, and lets you type in a new command.
 
 ## Command line overview: the essentials
 
