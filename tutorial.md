@@ -159,15 +159,14 @@ Extremely useful and often used. Can be used to chain programs together that are
 
 use `|` to stream the output of a program to the input of a program 
 
-use `>>` for appending to a file
-
+use `>>` for appending to a file \
 `echo "I want to append my file with this string" >> myfile`
 
-use `>` for overwriting the file, it gives no warnings 
-
+use `>` for overwriting the file, it gives no warnings \
 `echo "I want to overwrite my file with this string" > myfile`
 
-use `<` for reading from a file (example `less < bigFile.txt`)
+use `<` for reading from a file \
+`less < bigFile.txt`
 
 
 ### Remote access
